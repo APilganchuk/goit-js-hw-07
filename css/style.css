@@ -1,0 +1,9 @@
+/* task 3 */
+#gallery {
+    display: flex;
+    justify-content: space-between;
+}
+.list-item {
+    list-style: none;
+}
+/* task ? */
