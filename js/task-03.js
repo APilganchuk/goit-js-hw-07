@@ -15,10 +15,16 @@ const images = [
         alt: 'Group of Horses Running',
     },
 ];
-const listEl = document.querySelector('#gallery');
-console.log(listEl);
 
-const addImageEL = images.map(
-    ({ url, alt }) => `<li class='list-item'><img src="${url}" alt="${alt}" width="400" height="250"/></li>`,
-);
-listEl.insertAdjacentHTML('afterbegin', addImageEL.join(''));
+const createsImageGalleryMarkup = imagesArray => {
+    const { url, alt } = imagesArray;
+    return `<li class="list-item"><img src="${url}" alt="${alt}" width=400 height=230></li>`;
+};
+
+const imageGalleryMarkupString = images.map(createsImageGalleryMarkup).join('');
+
+const listRef = document.querySelector('#gallery');
+listRef.insertAdjacentHTML('afterbegin', imageGalleryMarkupString);
+
+
+
